@@ -1,4 +1,10 @@
 // src/data/dashboard.js
+export const patient = {
+  id: '001',
+  name: 'Jane Doe',
+};
+
+
 export const generalInfo = [
   { label: 'Age', value: '34 years' },
   { label: 'Sex', value: 'Female' },
