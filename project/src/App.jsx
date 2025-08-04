@@ -1,27 +1,29 @@
-import Dashboard from "./components/dashboard"; // Make sure dashboard.jsx exports Dashboard properly
-import {
-  patient,
-  generalInfo,
-  medicalHistory,
-  medications,
-  careTeam,
-  vitals,
-  alerts,
-} from "./data/dashboard";
-import "./App.css";
+//function App() {
+  //return (
+    //<div className="bg-yellow-300 p-8">
+      //<div className="text-red-500 text-xl font-bold">TAILWIND TEST</div>
+    //</div>
+  //);
+//}
 
-function App() {
+//export default App;
+
+import Sidebar from './components/Sidebar';
+import VitalsCard from './components/VitalsCard';
+import AlertsList from './components/AlertsList';
+import Header from './components/Header'; // you'll create this next
+
+export default function App() {
   return (
-    <Dashboard
-      patient={patient}
-      generalInfo={generalInfo}
-      medicalHistory={medicalHistory}
-      medications={medications}
-      careTeam={careTeam}
-      vitals={vitals}
-      alerts={alerts}
-    />
+    <div className="min-h-screen bg-gradient-to-br from-green-950 to-green-400 text-gray-800">
+      <Header />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4">
+        <Sidebar />
+        <div className="lg:col-span-2 space-y-4">
+          <VitalsCard />
+          <AlertsList />
+        </div>
+      </div>
+    </div>
   );
 }
-
-export default App;
