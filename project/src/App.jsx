@@ -15,7 +15,7 @@ import Header from './components/Header'; // you'll create this next
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-950 to-green-400 text-gray-800">
+    <div className="min-h-screen bg-gradient-to-b from-[#014421] via-[#1e7035] to-[#b6fcb6] text-gray-800">
       <Header />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4">
         <Sidebar />

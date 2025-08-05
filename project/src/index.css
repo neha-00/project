@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, /* … */;
 }
 
+.bj-sage{
+  background-color: #9cb984;
+}
+
+.bj-golden{
+  background-color: #f8d95e;
+}
+
+.text-sage {
+  color: #9cb984;
+}
+
+.text-red{
+  color: #ec6868;
+}
