@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@keyframes squiggleScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, /* … */;
