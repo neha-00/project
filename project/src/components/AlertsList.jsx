@@ -1,6 +1,6 @@
 export default function Alerts() {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-md max-w-4xl mx-auto">
+    <div className="bj-offwhite rounded-2xl p-6 shadow-md max-w-[900px] mx-auto">
       <h2 className="text-lg font-semibold text-gray-800 mb-4">Recent Alerts & Notifications</h2>
 
       {/* Alert 1 */}

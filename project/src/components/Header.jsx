@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="flex justify-between items-center px-6 py-4 bg-white shadow-md">
+    <header className="flex justify-between items-center px-6 py-4 bg-[#FFFCF8] shadow-md">
       <div className="text-2xl font-bold text-green-800">knouri</div>
       <div className="flex space-x-6 items-center text-sm">
         <span className="hover:underline cursor-pointer">All Patients</span>
