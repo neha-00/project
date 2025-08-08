@@ -1,54 +1,69 @@
-export default function Sidebar() {
+// src/components/Sidebar.jsx
+export default function Sidebar({ patient }) {
+  const gi = patient?.generalInfo || {};
+  const pd = patient?.primaryDiagnosis || {};
+  const history = patient?.medicalHistory || [];
+  const meds = patient?.medications || [];
+  const care = patient?.careTeam || [];
+
   return (
     <div className="space-y-4 p-4 text-sm text-white">
+      {/* Patient header */}
       <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg shadow-md">
-        <h2 className="text-lg font-bold">Jane Doe</h2>
-        <p className="text-gray-300">Patient ID: #P-2024-0156</p>
+        <h2 className="text-lg font-bold">{patient?.name ?? '—'}</h2>
+        <p className="text-gray-300">Patient ID: #{patient?.patientId ?? '—'}</p>
       </div>
 
+      {/* General Information */}
       <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg shadow-md">
         <h3 className="font-bold">General Information</h3>
-        <p>Age: 34</p>
-        <p>Sex: Female</p>
-        <p>Blood Type: A+</p>
-        <p>Height: 165 cm</p>
-        <p>Weight: 68 kg</p>
+        <p>Age: {gi?.age ?? '—'}</p>
+        <p>Sex: {gi?.sex ?? '—'}</p>
+        <p>Blood Type: {gi?.bloodType ?? '—'}</p>
+        <p>Height: {gi?.heightCm != null ? `${gi.heightCm} cm` : '—'}</p>
+        <p>Weight: {gi?.weightKg != null ? `${gi.weightKg} kg` : '—'}</p>
       </div>
 
+      {/* Primary Diagnosis */}
       <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg shadow-md">
         <h3 className="font-bold">Primary Diagnosis</h3>
-        <p>Congestive Heart Failure</p>
-        <p className="text-xs text-gray-300">Admitted: June 29, 2025</p>
+        <p>{pd?.diagnosis ?? '—'}</p>
+        <p className="text-xs text-gray-300">Admitted: {pd?.admittedDate ?? '—'}</p>
       </div>
 
+      {/* Medical History */}
       <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg shadow-md">
         <h3 className="font-bold">Medical History</h3>
         <ul className="list-disc list-inside text-sm">
-          <li>Hypertension (2019)</li>
-          <li>High Cholesterol (2021)</li>
-          <li>Arrhythmias (2022)</li>
+          {history.length
+            ? history.map((item, i) => <li key={i}>{item}</li>)
+            : <li>—</li>}
         </ul>
       </div>
 
+      {/* Current Medications */}
       <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg shadow-md">
         <h3 className="font-bold">Current Medications</h3>
         <ul className="list-disc list-inside text-sm">
-          <li>Losartan 50mg</li>
-          <li>Atorvastatin 10mg</li>
-          <li>Metoprolol 25mg</li>
+          {meds.length
+            ? meds.map((m, i) => <li key={i}>{m}</li>)
+            : <li>—</li>}
         </ul>
       </div>
 
+      {/* Care Team */}
       <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg shadow-md">
         <h3 className="font-bold">Care Team</h3>
-        <div className="mb-3 text-sm">
-          <p className="font-medium text-white">Dr. John Smith</p>
-          <p className="text-white-300">Cardiologist</p>
-        </div>
-        <div className="text-sm">
-          <p className="font-medium text-white">Nurse Emily Chen</p>
-          <p className="text-brightwhite-300">Primary Nurse</p>
-        </div>
+        {care.length ? (
+          care.map((c, i) => (
+            <div className="mb-3 text-sm" key={`${c.name}-${i}`}>
+              <p className="font-medium text-white">{c?.name ?? '—'}</p>
+              <p className="text-gray-300">{c?.role ?? '—'}</p>
+            </div>
+          ))
+        ) : (
+          <p>—</p>
+        )}
       </div>
     </div>
   );
