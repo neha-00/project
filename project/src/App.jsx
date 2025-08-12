@@ -13,15 +13,15 @@ const SELECTED_KEY = 'knouri-selected-id';
 
 // Optional fallback patient when nothing is selected/empty storage
 const DEFAULT_PATIENT = {
-  patientId: 'P-2024-0156',
-  name: 'Jane Doe',
-  generalInfo: { age: 34, sex: 'Female', bloodType: 'A+', heightCm: 165, weightKg: 68 },
-  primaryDiagnosis: { diagnosis: 'Congestive Heart Failure', admittedDate: '2025-06-29' },
-  medicalHistory: ['Hypertension (2019)', 'High Cholesterol (2021)', 'Arrhythmias (2022)'],
-  medications: ['Losartan 50mg', 'Atorvastatin 10mg', 'Metoprolol 25mg'],
+  patientId: 'N/A',
+  name: 'N/A',
+  generalInfo: { age: 0, sex: 'N/A', bloodType: 'N/A', heightCm: 0, weightKg: 0 },
+  primaryDiagnosis: { diagnosis: 'N/A', admittedDate: 'N/A' },
+  medicalHistory: ['N/A'],
+  medications: ['N/A'],
   careTeam: [
-    { name: 'Dr. John Smith', role: 'Cardiologist' },
-    { name: 'Nurse Emily Chen', role: 'Primary Nurse' },
+    { name: 'N/A', role: 'N/A' },
+    { name: 'N/A', role: 'N/A' },
   ],
 };
 

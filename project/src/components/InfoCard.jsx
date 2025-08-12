@@ -7,7 +7,7 @@ export default function InfoCard({ title, items, isList }) {
       <ul className="text-sm text-gray-600 space-y-2">
         {items.map((item, i) => (
           <li key={i}>
-            <span className="font-medium text-gray-800">{item.label}: </span>
+            <span className="font-medium text-gray-900">{item.label}: </span>
             {item.value}
           </li>
         ))}

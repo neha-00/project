@@ -58,7 +58,7 @@ export default function Sidebar({ patient }) {
           care.map((c, i) => (
             <div className="mb-3 text-sm" key={`${c.name}-${i}`}>
               <p className="font-medium text-white">{c?.name ?? '—'}</p>
-              <p className="text-gray-300">{c?.role ?? '—'}</p>
+              <p className="text-white-300">{c?.role ?? '—'}</p>
             </div>
           ))
         ) : (
