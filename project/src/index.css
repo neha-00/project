@@ -1,1 +1,41 @@
 @import "tailwindcss";
+
+@keyframes squiggleScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, /* … */;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, /* … */;
+}
+
+.bj-sage{
+  background-color: #9cb984;
+}
+
+.bj-golden{
+  background-color: #f8d95e;
+}
+
+.text-sage {
+  color: #9cb984;
+}
+
+.text-red{
+  color: #ec6868;
+}
+
+.bj-offwhite{
+  background-color: #FFFCF8
+}
